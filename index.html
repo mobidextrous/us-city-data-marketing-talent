@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMO Ladder | Global Talent Supply</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital@1&display=swap');
+
+        :root {
+            --teal-accent: #008080;
+            --orange-accent: #FF5722;
+            --charcoal: #121212;
+        }
+
+        body {
+            background-color: var(--charcoal);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .header-font { font-weight: 700; letter-spacing: -0.05em; }
+        .serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+
+        .stepped-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .talent-card {
+            background: #1a1a1a;
+            border-left: 4px solid var(--teal-accent);
+            padding: 1.5rem;
+            width: 80%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .talent-card:hover {
+            transform: translateX(20px);
+            background: #252525;
+        }
+
+        /* The Staircase Logic */
+        .step-1 { align-self: flex-start; border-color: #444; }
+        .step-2 { align-self: center; border-color: var(--teal-accent); }
+        .step-3 { align-self: flex-end; border-color: var(--orange-accent); }
+
+        .stat-circle {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--orange-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+        }
+
+        .growth-positive { color: #4ade80; }
+        .growth-negative { color: #f87171; }
+    </style>
+</head>
+<body>
+
+    <div class="p-8 text-center">
+        <h1 class="text-5xl header-font uppercase">Three Ways Marketing Talent Works Today</h1>
+        <p class="serif-italic text-xl mt-2 text-gray-400">The shift from structured legacy to independent energy</p>
+    </div>
+
+    <div class="stepped-container">
+        <div class="talent-card step-1">
+            <h2 class="text-2xl font-bold uppercase tracking-widest">Employed</h2>
+            <p class="text-gray-400">Company-based roles. Structured teams.</p>
+            <div class="mt-4 text-sm">
+                <span class="opacity-50">Top Hub:</span> New York (101k Pros) <br>
+                <span class="opacity-50">Top Anchor:</span> <span class="serif-italic">Google, Disney</span>
+            </div>
+        </div>
+
+        <div class="talent-card step-2">
+            <h2 class="text-2xl font-bold uppercase tracking-widest text-teal-500">Enabled</h2>
+            <p class="text-gray-400">Platform-aggregated talent. Flexible engagement.</p>
+            <div class="mt-4 text-sm">
+                <span class="opacity-50">Volume Shift:</span> Upwork/Fiverr out-scaling Amazon <br>
+                <span class="opacity-50">Hiring Demand:</span> <span class="serif-italic text-teal-400">Very High</span>
+            </div>
+            <div class="bg-teal-900/20 absolute inset-0 -z-10 blur-xl"></div>
+        </div>
+
+        <div class="talent-card step-3">
+            <h2 class="text-2xl font-bold uppercase tracking-widest text-orange-500">Independent</h2>
+            <p class="text-gray-400">Direct-to-market professionals. Multi-client focus.</p>
+            <div class="mt-4 text-sm">
+                <span class="opacity-50">Growth Velocity:</span> <span class="growth-positive">+3.4% (Tempe/Boulder)</span> <br>
+                <span class="opacity-50">Identity:</span> <span class="serif-italic text-orange-400">People-Powered</span>
+            </div>
+            <div class="stat-circle">+40%</div>
+        </div>
+    </div>
+
+    <div class="mt-12 p-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 max-w-2xl mx-auto">
+            The marketing workforce no longer sits inside companies alone. 
+            <span class="text-white block mt-2 font-bold">The biggest “employers” of marketers aren’t employers at all.</span>
+        </p>
+    </div>
+
+    <script>
+        // Simple interaction: log city data to console on click
+        document.querySelectorAll('.talent-card').forEach(card => {
+            card.addEventListener('click', () => {
+                console.log("Analyzing corridor flow for CMO Ladder...");
+                card.style.transform = "scale(1.05) translateX(30px)";
+                setTimeout(() => card.style.transform = "translateX(20px)", 400);
+            });
+        });
+    </script>
+</body>
+</html>
